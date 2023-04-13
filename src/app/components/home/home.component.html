@@ -1,0 +1,32 @@
+
+<app-title-and-subtitle  [labels]="labelHeader" />
+
+<mat-card>
+   <mat-card-header>
+     <mat-card-title class="card-title">N° Pagos {{detalle.cantidad}}</mat-card-title>
+     <mat-card-subtitle class="card-title">Dinero Depositado {{ detalle.money }}</mat-card-subtitle>
+   </mat-card-header>
+   <div [formGroup]="control" style="width: 100%;">
+   <mat-form-field>
+      <input 
+     
+      type="text"
+      matInput
+      placeholder="Gasto"
+      formControlName="money"
+      >
+   </mat-form-field>
+
+   <mat-form-field>
+      <input 
+      type="text"
+      matInput
+      formControlName="description"
+      placeholder="Descripcion"
+      >
+   </mat-form-field>
+</div>
+   <mat-card-actions>
+     <button (click)="addSpent()" mat-raised-button color="primary">Guardar</button>
+   </mat-card-actions>
+ </mat-card>
